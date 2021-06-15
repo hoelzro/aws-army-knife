@@ -38,8 +38,7 @@ func TestExamples(t *testing.T) {
 
 		exampleOutputBytes, err := os.ReadFile(filepath.Join("examples", exampleOutputFile))
 		if err != nil {
-			// XXX for now
-			exampleOutputBytes = nil
+			t.Fatal(err)
 		}
 
 		testName := file.Name()
@@ -62,10 +61,8 @@ func TestExamples(t *testing.T) {
 				t.Fatal(err)
 			}
 
-			if ex.expectedOutput != nil {
-				if gotOutput.String() != string(ex.expectedOutput) {
-					t.Fatal("output doesn't match")
-				}
+			if gotOutput.String() != string(ex.expectedOutput) {
+				t.Fatal("output doesn't match")
 			}
 		})
 	}
