@@ -15,6 +15,7 @@ func TestExamples(t *testing.T) {
 
 	for _, ex := range exampleInputs {
 		testName := ex.Name()
+		testName = strings.TrimSuffix(testName, filepath.Ext(testName))
 		t.Run(testName, func(t *testing.T) {
 			exampleInput, err := os.Open(filepath.Join("examples", ex.Name()))
 			if err != nil {
