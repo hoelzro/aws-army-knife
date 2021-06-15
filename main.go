@@ -17,8 +17,8 @@ var exceptions = map[string]string{
 	"SecretList":               "Name",
 }
 
-func awsNames(args []string) error {
-	input, err := io.ReadAll(os.Stdin)
+func awsNames(r io.Reader, w io.Writer, args []string) error {
+	input, err := io.ReadAll(r)
 	if err != nil {
 		return err
 	}
@@ -91,7 +91,7 @@ func awsNames(args []string) error {
 	}
 
 	for _, item := range items {
-		fmt.Println(item[nameKey])
+		fmt.Fprintln(w, item[nameKey])
 	}
 
 	return nil
@@ -108,7 +108,7 @@ func main() {
 
 	switch invokedAs {
 	case "aws-names":
-		err := awsNames(args)
+		err := awsNames(os.Stdin, os.Stdout, args)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)

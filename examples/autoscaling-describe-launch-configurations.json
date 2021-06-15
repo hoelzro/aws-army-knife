@@ -1,0 +1,32 @@
+{
+  "LaunchConfigurations": [
+    {
+      "AssociatePublicIpAddress": null,
+      "BlockDeviceMappings": [],
+      "ClassicLinkVPCId": null,
+      "ClassicLinkVPCSecurityGroups": [],
+      "CreatedTime": "2015-01-21T23:04:42.2Z",
+      "EbsOptimized": false,
+      "IamInstanceProfile": null,
+      "ImageId": "ami-12345678",
+      "InstanceMonitoring": {
+        "Enabled": true
+      },
+      "InstanceType": "t2.micro",
+      "KernelId": "",
+      "KeyName": "",
+      "LaunchConfigurationARN": "arn:aws:autoscaling:us-east-1:123456789012:launchConfiguration:12345678-1234-1234-1234-123456789012:launchConfigurationName/my-lc",
+      "LaunchConfigurationName": "my-lc",
+      "MetadataOptions": null,
+      "PlacementTenancy": null,
+      "RamdiskId": "",
+      "SecurityGroups": [
+        "sg-12345678"
+      ],
+      "SpotPrice": null,
+      "UserData": ""
+    }
+  ],
+  "NextToken": null,
+  "ResultMetadata": {}
+}

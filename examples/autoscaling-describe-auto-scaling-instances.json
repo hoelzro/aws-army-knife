@@ -1,0 +1,18 @@
+{
+  "AutoScalingInstances": [
+    {
+      "AutoScalingGroupName": "my-asg",
+      "AvailabilityZone": "us-east-1b",
+      "HealthStatus": "HEALTHY",
+      "InstanceId": "i-12345678",
+      "InstanceType": null,
+      "LaunchConfigurationName": "my-lc",
+      "LaunchTemplate": null,
+      "LifecycleState": "InService",
+      "ProtectedFromScaleIn": false,
+      "WeightedCapacity": null
+    }
+  ],
+  "NextToken": null,
+  "ResultMetadata": {}
+}

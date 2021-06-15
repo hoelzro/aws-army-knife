@@ -1,0 +1,65 @@
+{
+  "AutoScalingGroups": [
+    {
+      "AutoScalingGroupARN": "arn:aws:autoscaling:us-east-1:123456789012:autoScalingGroup:12345678-1234-1234-1234-123456789012:autoScalingGroupName/my-asg",
+      "AutoScalingGroupName": "my-asg",
+      "AvailabilityZones": [
+        "us-east-1b",
+        "us-east-1a"
+      ],
+      "CapacityRebalance": null,
+      "CreatedTime": "2015-05-06T17:47:15.107Z",
+      "DefaultCooldown": 300,
+      "DesiredCapacity": 2,
+      "EnabledMetrics": [],
+      "HealthCheckGracePeriod": 300,
+      "HealthCheckType": "ELB",
+      "Instances": [
+        {
+          "AvailabilityZone": "us-east-1c",
+          "HealthStatus": null,
+          "InstanceId": "i-12345678",
+          "InstanceType": null,
+          "LaunchConfigurationName": "my-lc",
+          "LaunchTemplate": null,
+          "LifecycleState": "InService",
+          "ProtectedFromScaleIn": false,
+          "WeightedCapacity": null
+        }
+      ],
+      "LaunchConfigurationName": "my-lc",
+      "LaunchTemplate": null,
+      "LoadBalancerNames": [
+        "my-loadbalancer"
+      ],
+      "MaxInstanceLifetime": null,
+      "MaxSize": 10,
+      "MinSize": 2,
+      "MixedInstancesPolicy": null,
+      "NewInstancesProtectedFromScaleIn": false,
+      "PlacementGroup": null,
+      "PredictedCapacity": null,
+      "ServiceLinkedRoleARN": null,
+      "Status": null,
+      "SuspendedProcesses": [],
+      "Tags": [
+        {
+          "Key": "environment",
+          "PropagateAtLaunch": true,
+          "ResourceId": "my-asg",
+          "ResourceType": "auto-scaling-group",
+          "Value": "test"
+        }
+      ],
+      "TargetGroupARNs": null,
+      "TerminationPolicies": [
+        "Default"
+      ],
+      "VPCZoneIdentifier": "subnet-12345678,subnet-98765432",
+      "WarmPoolConfiguration": null,
+      "WarmPoolSize": null
+    }
+  ],
+  "NextToken": null,
+  "ResultMetadata": {}
+}
