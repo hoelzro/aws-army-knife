@@ -30,10 +30,17 @@ func awsNames(r io.Reader, w io.Writer, args []string) error {
 		return err
 	}
 
-	var key string
-	for key = range doc {
-		break
+	if len(doc) == 0 {
+		return errors.New("no keys in input")
 	}
+
+	keys := make([]string, 0, len(doc))
+	for key := range doc {
+		keys = append(keys, key)
+	}
+
+	sort.Strings(keys)
+	key := keys[0]
 
 	rawItems := doc[key].([]interface{})
 	items := make([]map[string]interface{}, len(rawItems))
