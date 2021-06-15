@@ -1,33 +1,52 @@
 package main
 
 import (
+	"bytes"
 	"os"
 	"path/filepath"
 	"strings"
 	"testing"
 )
 
+type example struct {
+	name           string
+	input          []byte
+	expectedOutput []byte
+}
+
 func TestExamples(t *testing.T) {
-	exampleInputs, err := os.ReadDir("examples")
+	exampleFiles, err := os.ReadDir("examples")
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	for _, ex := range exampleInputs {
-		testName := ex.Name()
+	var examples []example
+
+	for _, file := range exampleFiles {
+		if filepath.Ext(file.Name()) != ".json" {
+			continue
+		}
+
+		exampleInputBytes, err := os.ReadFile(filepath.Join("examples", file.Name()))
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		testName := file.Name()
 		testName = strings.TrimSuffix(testName, filepath.Ext(testName))
-		t.Run(testName, func(t *testing.T) {
-			exampleInput, err := os.Open(filepath.Join("examples", ex.Name()))
-			if err != nil {
-				t.Fatal(err)
-			}
 
-			defer exampleInput.Close()
+		examples = append(examples, example{
+			name:  testName,
+			input: exampleInputBytes,
+		})
+	}
 
+	for _, ex := range examples {
+		t.Run(ex.name, func(t *testing.T) {
 			exampleOutput := &strings.Builder{}
 
 			args := []string{}
-			err = awsNames(exampleInput, exampleOutput, args)
+			err = awsNames(bytes.NewReader(ex.input), exampleOutput, args)
 			if err != nil {
 				t.Fatal(err)
 			}
