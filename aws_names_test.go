@@ -32,25 +32,41 @@ func TestExamples(t *testing.T) {
 			t.Fatal(err)
 		}
 
+		exampleOutputFile := file.Name()
+		exampleOutputFile = strings.TrimSuffix(exampleOutputFile, filepath.Ext(exampleOutputFile))
+		exampleOutputFile += ".output"
+
+		exampleOutputBytes, err := os.ReadFile(filepath.Join("examples", exampleOutputFile))
+		if err != nil {
+			// XXX for now
+			exampleOutputBytes = nil
+		}
+
 		testName := file.Name()
 		testName = strings.TrimSuffix(testName, filepath.Ext(testName))
 
 		examples = append(examples, example{
-			name:  testName,
-			input: exampleInputBytes,
+			name:           testName,
+			input:          exampleInputBytes,
+			expectedOutput: exampleOutputBytes,
 		})
 	}
 
 	for _, ex := range examples {
 		t.Run(ex.name, func(t *testing.T) {
-			exampleOutput := &strings.Builder{}
+			gotOutput := &strings.Builder{}
 
 			args := []string{}
-			err = awsNames(bytes.NewReader(ex.input), exampleOutput, args)
+			err = awsNames(bytes.NewReader(ex.input), gotOutput, args)
 			if err != nil {
 				t.Fatal(err)
 			}
-			// XXX test got output matches expected
+
+			if ex.expectedOutput != nil {
+				if gotOutput.String() != string(ex.expectedOutput) {
+					t.Fatal("output doesn't match")
+				}
+			}
 		})
 	}
 }
