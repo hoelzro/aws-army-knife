@@ -70,8 +70,10 @@ func awsNames(r io.Reader, w io.Writer, args []string) error {
 		expandedItems := make([]map[string]interface{}, 0)
 
 		for _, item := range items {
-			instances := item["Instances"].([]map[string]interface{})
-			expandedItems = append(expandedItems, instances...)
+			instances := item["Instances"].([]interface{})
+			for _, instance := range instances {
+				expandedItems = append(expandedItems, instance.(map[string]interface{}))
+			}
 		}
 
 		items = expandedItems
