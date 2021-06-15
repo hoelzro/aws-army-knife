@@ -12,9 +12,10 @@ import (
 )
 
 var exceptions = map[string]string{
-	"SecurityGroups":           "GroupName",
+	"AutoScalingInstances":     "InstanceId",
 	"LoadBalancerDescriptions": "LoadBalancerName",
 	"SecretList":               "Name",
+	"SecurityGroups":           "GroupName",
 }
 
 func awsNames(r io.Reader, w io.Writer, args []string) error {
