@@ -44,11 +44,24 @@ func awsNames(r io.Reader, w io.Writer, args []string) error {
 	sort.Strings(sliceKeys)
 	key := sliceKeys[0]
 
-	rawItems := doc[key].([]interface{})
-	items := make([]map[string]interface{}, len(rawItems))
+	rawItems := doc[key].([]interface{}) // XXX less shitty type assertion
+	items := make([]map[string]interface{}, 0, len(rawItems))
 
-	for i, item := range rawItems {
-		items[i] = item.(map[string]interface{})
+	oopsAllStrings := true
+	for _, item := range rawItems {
+		switch item := item.(type) {
+		case string:
+			fmt.Fprintln(w, item)
+		case map[string]interface{}:
+			oopsAllStrings = false
+			items = append(items, item)
+		default:
+			panic("can't handle this type")
+		}
+	}
+
+	if oopsAllStrings {
+		return nil
 	}
 
 	if key == "Reservations" {
