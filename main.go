@@ -34,13 +34,15 @@ func awsNames(r io.Reader, w io.Writer, args []string) error {
 		return errors.New("no keys in input")
 	}
 
-	keys := make([]string, 0, len(doc))
-	for key := range doc {
-		keys = append(keys, key)
+	sliceKeys := make([]string, 0, len(doc))
+	for key, value := range doc {
+		if _, isSlice := value.([]interface{}); isSlice {
+			sliceKeys = append(sliceKeys, key)
+		}
 	}
 
-	sort.Strings(keys)
-	key := keys[0]
+	sort.Strings(sliceKeys)
+	key := sliceKeys[0]
 
 	rawItems := doc[key].([]interface{})
 	items := make([]map[string]interface{}, len(rawItems))
