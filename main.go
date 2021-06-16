@@ -13,6 +13,7 @@ import (
 
 var exceptions = map[string]string{
 	"AutoScalingInstances":     "InstanceId",
+	"LaunchTemplates":          "LaunchTemplateName",
 	"LoadBalancerDescriptions": "LoadBalancerName",
 	"Roles":                    "RoleName",
 	"SecretList":               "Name",

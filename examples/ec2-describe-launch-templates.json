@@ -1,0 +1,15 @@
+{
+  "LaunchTemplates": [
+    {
+      "CreateTime": "2017-10-31T11:38:52Z",
+      "CreatedBy": "arn:aws:iam::123456789012:root",
+      "DefaultVersionNumber": 1,
+      "LatestVersionNumber": 1,
+      "LaunchTemplateId": "lt-0a20c965061f64abc",
+      "LaunchTemplateName": "MyLaunchTemplate",
+      "Tags": null
+    }
+  ],
+  "NextToken": null,
+  "ResultMetadata": {}
+}
