@@ -19,6 +19,7 @@ var exceptions = map[string]string{
 	"Roles":                    "RoleName",
 	"SecretList":               "Name",
 	"SecurityGroups":           "GroupName",
+	"Users":                    "UserName",
 }
 
 func awsNames(r io.Reader, w io.Writer, args []string) error {
