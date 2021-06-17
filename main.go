@@ -19,6 +19,7 @@ var exceptions = map[string]string{
 	"Roles":                    "RoleName",
 	"SecretList":               "Name",
 	"SecurityGroups":           "GroupName",
+	"Topics":                   "TopicArn",
 	"Users":                    "UserName",
 }
 
