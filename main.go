@@ -15,6 +15,7 @@ var exceptions = map[string]string{
 	"AutoScalingInstances":     "InstanceId",
 	"LaunchTemplates":          "LaunchTemplateName",
 	"LoadBalancerDescriptions": "LoadBalancerName",
+	"Policies":                 "PolicyName",
 	"Roles":                    "RoleName",
 	"SecretList":               "Name",
 	"SecurityGroups":           "GroupName",
