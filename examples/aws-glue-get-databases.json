@@ -1,0 +1,66 @@
+{
+  "DatabaseList": [
+    {
+      "CatalogId": "111122223333",
+      "CreateTableDefaultPermissions": [
+        {
+          "Permissions": [
+            "ALL"
+          ],
+          "Principal": {
+            "DataLakePrincipalIdentifier": "IAM_ALLOWED_PRINCIPALS"
+          }
+        }
+      ],
+      "CreateTime": 1602084052,
+      "Description": "Default Hive database",
+      "LocationUri": "file:/spark-warehouse",
+      "Name": "default"
+    },
+    {
+      "CatalogId": "111122223333",
+      "CreateTableDefaultPermissions": [
+        {
+          "Permissions": [
+            "ALL"
+          ],
+          "Principal": {
+            "DataLakePrincipalIdentifier": "IAM_ALLOWED_PRINCIPALS"
+          }
+        }
+      ],
+      "CreateTime": 1587072847,
+      "Name": "flights-db"
+    },
+    {
+      "CatalogId": "111122223333",
+      "CreateTableDefaultPermissions": [
+        {
+          "Permissions": [
+            "ALL"
+          ],
+          "Principal": {
+            "DataLakePrincipalIdentifier": "IAM_ALLOWED_PRINCIPALS"
+          }
+        }
+      ],
+      "CreateTime": 1601415625,
+      "Name": "legislators"
+    },
+    {
+      "CatalogId": "111122223333",
+      "CreateTableDefaultPermissions": [
+        {
+          "Permissions": [
+            "ALL"
+          ],
+          "Principal": {
+            "DataLakePrincipalIdentifier": "IAM_ALLOWED_PRINCIPALS"
+          }
+        }
+      ],
+      "CreateTime": 1601498566,
+      "Name": "tempdb"
+    }
+  ]
+}

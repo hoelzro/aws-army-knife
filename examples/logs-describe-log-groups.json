@@ -1,0 +1,12 @@
+{
+  "logGroups": [
+    {
+      "arn": "arn:aws:logs:us-west-2:0123456789012:log-group:my-logs:*",
+      "creationTime": 1433189500783,
+      "logGroupName": "my-logs",
+      "metricFilterCount": 0,
+      "retentionInDays": 5,
+      "storedBytes": 0
+    }
+  ]
+}

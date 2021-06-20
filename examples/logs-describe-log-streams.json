@@ -1,0 +1,16 @@
+{
+  "logStreams": [
+    {
+      "arn": "arn:aws:logs:us-west-2:0123456789012:log-group:my-logs:log-stream:20150531",
+      "creationTime": 1433189871774,
+      "logStreamName": "20150531",
+      "storedBytes": 0
+    },
+    {
+      "arn": "arn:aws:logs:us-west-2:0123456789012:log-group:my-logs:log-stream:20150601",
+      "creationTime": 1433189873898,
+      "logStreamName": "20150601",
+      "storedBytes": 0
+    }
+  ]
+}

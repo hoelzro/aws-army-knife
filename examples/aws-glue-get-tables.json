@@ -1,0 +1,117 @@
+{
+  "TableList": [
+    {
+      "CatalogId": "007436865787",
+      "CreateTime": 1602730539,
+      "CreatedBy": "arn:aws:iam::007436865787:user/JRSTERN",
+      "DatabaseName": "tempdb",
+      "IsRegisteredWithLakeFormation": false,
+      "Name": "my-s3-sink",
+      "Parameters": {
+        "classification": "json"
+      },
+      "Retention": 0,
+      "StorageDescriptor": {
+        "Columns": [
+          {
+            "Name": "sensorid",
+            "Type": "int"
+          },
+          {
+            "Name": "currenttemperature",
+            "Type": "int"
+          },
+          {
+            "Name": "status",
+            "Type": "string"
+          }
+        ],
+        "Compressed": false,
+        "Location": "s3://janetst-bucket-01/test-s3-output/",
+        "NumberOfBuckets": 0,
+        "SerdeInfo": {
+          "SerializationLibrary": "org.openx.data.jsonserde.JsonSerDe"
+        },
+        "SortColumns": [],
+        "StoredAsSubDirectories": false
+      },
+      "UpdateTime": 1602730539
+    },
+    {
+      "CatalogId": "007436865787",
+      "CreateTime": 1602730658,
+      "CreatedBy": "arn:aws:iam::007436865787:user/JRSTERN",
+      "DatabaseName": "tempdb",
+      "IsRegisteredWithLakeFormation": false,
+      "Name": "s3-source",
+      "Parameters": {
+        "classification": "json"
+      },
+      "Retention": 0,
+      "StorageDescriptor": {
+        "Columns": [
+          {
+            "Name": "sensorid",
+            "Type": "int"
+          },
+          {
+            "Name": "currenttemperature",
+            "Type": "int"
+          },
+          {
+            "Name": "status",
+            "Type": "string"
+          }
+        ],
+        "Compressed": false,
+        "Location": "s3://janetst-bucket-01/",
+        "NumberOfBuckets": 0,
+        "SortColumns": [],
+        "StoredAsSubDirectories": false
+      },
+      "UpdateTime": 1602730658
+    },
+    {
+      "CatalogId": "007436865787",
+      "CreateTime": 1601507001,
+      "CreatedBy": "arn:aws:iam::007436865787:user/JRSTERN",
+      "DatabaseName": "tempdb",
+      "IsRegisteredWithLakeFormation": false,
+      "Name": "test-kinesis-input",
+      "Parameters": {
+        "classification": "json"
+      },
+      "Retention": 0,
+      "StorageDescriptor": {
+        "Columns": [
+          {
+            "Name": "sensorid",
+            "Type": "int"
+          },
+          {
+            "Name": "currenttemperature",
+            "Type": "int"
+          },
+          {
+            "Name": "status",
+            "Type": "string"
+          }
+        ],
+        "Compressed": false,
+        "Location": "my-testing-stream",
+        "NumberOfBuckets": 0,
+        "Parameters": {
+          "kinesisUrl": "https://kinesis.us-east-1.amazonaws.com",
+          "streamName": "my-testing-stream",
+          "typeOfData": "kinesis"
+        },
+        "SerdeInfo": {
+          "SerializationLibrary": "org.openx.data.jsonserde.JsonSerDe"
+        },
+        "SortColumns": [],
+        "StoredAsSubDirectories": false
+      },
+      "UpdateTime": 1601507001
+    }
+  ]
+}

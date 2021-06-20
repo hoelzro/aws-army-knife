@@ -1,0 +1,56 @@
+{
+  "CacheClusters": [
+    {
+      "ARN": "arn:aws:elasticache:us-west-2:xxxxxxxxxxx152:cluster:my-cache-cluster",
+      "AtRestEncryptionEnabled": false,
+      "AuthTokenEnabled": false,
+      "AutoMinorVersionUpgrade": true,
+      "CacheClusterCreateTime": "2019-11-26T01:22:52.396Z",
+      "CacheClusterId": "my-cluster-003",
+      "CacheClusterStatus": "available",
+      "CacheNodeType": "cache.r5.large",
+      "CacheParameterGroup": {
+        "CacheNodeIdsToReboot": [],
+        "CacheParameterGroupName": "default.redis5.0",
+        "ParameterApplyStatus": "in-sync"
+      },
+      "CacheSecurityGroups": [],
+      "CacheSubnetGroupName": "kxkxk",
+      "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
+      "Engine": "redis",
+      "EngineVersion": "5.0.5",
+      "LogDeliveryConfigurations": [
+        {
+          "DestinationDetails": {
+            "CloudWatchLogsDetails": {
+              "LogGroup": "test-log"
+            }
+          },
+          "DestinationType": "cloudwatch-logs",
+          "LogFormat": "text",
+          "LogType": "slow-log",
+          "Status": "active"
+        }
+      ],
+      "NotificationConfiguration": {
+        "TopicArn": "arn:aws:sns:us-west-2:xxxxxxxxxxx152:My_Topic",
+        "TopicStatus": "active"
+      },
+      "NumCacheNodes": 1,
+      "PendingModifiedValues": {},
+      "PreferredAvailabilityZone": "us-west-2a",
+      "PreferredMaintenanceWindow": "mon:17:30-mon:18:30",
+      "ReplicationGroupId": "my-cluster",
+      "ReplicationGroupLogDeliveryEnabled": false,
+      "SecurityGroups": [
+        {
+          "SecurityGroupId": "sg-xxxxxd7b",
+          "Status": "active"
+        }
+      ],
+      "SnapshotRetentionLimit": 0,
+      "SnapshotWindow": "06:30-07:30",
+      "TransitEncryptionEnabled": false
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "DBInstances": [
+    {
+      "DBInstanceClass": "db.t3.small",
+      "DBInstanceIdentifier": "mydbinstancecf",
+      "DBInstanceStatus": "available",
+      "Endpoint": {
+        "Address": "mydbinstancecf.abcexample.us-east-1.rds.amazonaws.com",
+        "HostedZoneId": "Z2R2ITUGPM61AM",
+        "Port": 3306
+      },
+      "Engine": "mysql",
+      "MasterUsername": "masterawsuser"
+    }
+  ]
+}

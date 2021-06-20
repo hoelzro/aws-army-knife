@@ -1,0 +1,40 @@
+{
+  "Clusters": [
+    {
+      "AllowVersionUpgrade": true,
+      "AutomatedSnapshotRetentionPeriod": 1,
+      "AvailabilityZone": "us-east-1a",
+      "ClusterCreateTime": "2013-01-22T21:59:29.559Z",
+      "ClusterIdentifier": "mycluster",
+      "ClusterParameterGroups": [
+        {
+          "ParameterApplyStatus": "in-sync",
+          "ParameterGroupName": "default.redshift-1.0"
+        }
+      ],
+      "ClusterSecurityGroups": [
+        {
+          "ClusterSecurityGroupName": "default",
+          "Status": "active"
+        }
+      ],
+      "ClusterStatus": "available",
+      "ClusterVersion": "1.0",
+      "DBName": "dev",
+      "Endpoint": {
+        "Address": "mycluster.coqoarplqhsn.us-east-1.redshift.amazonaws.com",
+        "Port": 5439
+      },
+      "MasterUsername": "adminuser",
+      "NodeType": "dw.hs1.xlarge",
+      "NumberOfNodes": 2,
+      "PendingModifiedValues": {},
+      "PreferredMaintenanceWindow": "sat:03:30-sat:04:00",
+      "PubliclyAccessible": "true",
+      "VpcSecurityGroups": []
+    }
+  ],
+  "ResponseMetadata": {
+    "RequestId": "65b71cac-64df-11e2-8f5b-e90bd6c77476"
+  }
+}
