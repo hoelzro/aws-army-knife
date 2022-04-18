@@ -18,6 +18,7 @@ var exceptions = map[string]string{
 	"LoadBalancerDescriptions": "LoadBalancerName",
 	"Policies":                 "PolicyName",
 	"Roles":                    "RoleName",
+	"Rules":                    "Name",
 	"SecretList":               "Name",
 	"SecurityGroups":           "GroupName",
 	"TableList":                "Name",
